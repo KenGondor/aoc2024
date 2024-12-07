@@ -26,7 +26,7 @@ int main()
 
         for (; startMatch != endMatch; ++startMatch)
         {
-            string token = *startMatch;
+            string token = *startMatch; // why is this line throwing seg fault?
 
             if (regex_match(token, mul_regex))
             {
@@ -39,10 +39,8 @@ int main()
                 string x = match[1].str();
                 string y = match[2].str();
 
-
                 total_sum = total_sum + stoi(x) * stoi(y);
                 cout << "X: " + x + ", Y: " + y << ", Current Sum: " << total_sum << endl;
-
             }
             else if (regex_match(token, do_regex))
             {
